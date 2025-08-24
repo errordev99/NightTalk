@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightTalk — Random Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">●</span><span id="siteName">NightTalk</span></div>
+    <div class="actions">
+      <button id="startBtn">Start</button>
+      <button id="nextBtn" disabled>Next</button>
+      <label class="switch"><input type="checkbox" id="videoToggle" checked /><span>Video</span></label>
+      <label class="switch"><input type="checkbox" id="audioToggle" checked /><span>Mic</span></label>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="video-wrap">
+      <div class="video-col">
+        <h3>You</h3>
+        <video id="localVideo" autoplay playsinline muted></video>
+      </div>
+      <div class="video-col">
+        <h3>Stranger</h3>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </div>
+    </section>
+
+    <section class="chat-wrap">
+      <div id="messages" class="messages"></div>
+      <div class="input-row">
+        <input id="msgInput" type="text" maxlength="2000" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Safety tips:</strong> Don’t share personal info. This is a demo.</p>
+  </footer>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
